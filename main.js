@@ -41,10 +41,15 @@ var flavorText = React.createClass({
 	    	anotherOne: "and another one"
 	    });
 	},
+	rawMarkup: function() {
+		var rawMarkup = this.state.text.toString();;
+		console.log(rawMarkup);
+		return { __html: rawMarkup };
+	},
 	render: function() {
 		return (
 			<div>
-				<p className="flavor-text">{this.state.text}</p>
+				<span key="unique_key" className="flavor-text" dangerouslySetInnerHTML={this.rawMarkup()}/>
 				<a onClick={this.handleClick} className="another-one">{this.state.anotherOne}</a>
 			</div>
 		);

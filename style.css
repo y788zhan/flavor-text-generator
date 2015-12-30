@@ -2,11 +2,13 @@
 	margin: auto;
 	width: 80%;
 	height: 200px;
+	text-align: center;
 }
 
 .flavor-text {
 	margin-top: 15px;
-	text-align: center;
+	margin: auto;
+	display: table;
 	font: 2em helvetica, sans-serif;
 }
 
@@ -22,6 +24,7 @@
 	font: 1em helvetica, sans-serif;
 	color: black;
 	float: right;
+	margin-top: 100px;
 	margin-right: 60px;
 	cursor: pointer;
 }
