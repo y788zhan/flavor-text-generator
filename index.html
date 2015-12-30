@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<script src="https://fb.me/react-0.13.3.js"></script>
+		<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+		<script src="cardData.js"></script>
+		<script type="text/jsx" src="main.js"></script>
+		<script type="text/jsx">
+			var ft = React.createElement(flavorText);
+			React.render(ft, document.getElementById('stuff'));
+		</script>
+
+		<link rel="icon" type="image/png" href="http://vignette2.wikia.nocookie.net/wowwiki/images/a/a0/Hearthstone-favicon-64x64.png/revision/latest?cb=20130325031813"/>
+		<title>Random Flavor Text Generator</title>
+	</head>
+	<body>
+		<div class="container">
+			<div id="stuff"></div>
+		</div>
+		<div class="footer">
+			<p>Card data obtained from https://hearthstonejson.com/</p>
+			<p>Not affiliated with Hearthstone JSON</p>
+		</div>
+	</body>
+</html>	

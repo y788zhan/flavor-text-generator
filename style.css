@@ -1,0 +1,41 @@
+#stuff {
+	margin: auto;
+	width: 80%;
+	height: 200px;
+}
+
+.flavor-text {
+	margin-top: 15px;
+	text-align: center;
+	font: 2em helvetica, sans-serif;
+}
+
+/***
+.card-name {
+	text-align: right;
+	font: 1.5em helvetica, sans-serif;
+	margin-right: 60px;
+}
+***/
+
+.another-one {
+	font: 1em helvetica, sans-serif;
+	color: black;
+	float: right;
+	margin-right: 60px;
+	cursor: pointer;
+}
+
+.another-one:hover {
+	text-decoration: underline;
+}
+
+.footer {
+	bottom: 15px;
+	left: 15px;
+	position: absolute;
+}
+
+.footer p {
+	font: 0.75em helvetica, sans-serif;
+}
