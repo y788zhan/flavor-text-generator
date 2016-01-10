@@ -1,7 +1,4 @@
 #stuff {
-	margin: auto;
-	width: 80%;
-	height: 200px;
 	text-align: center;
 }
 
@@ -12,25 +9,56 @@
 	font: 2em helvetica, sans-serif;
 }
 
-/***
-.card-name {
-	text-align: right;
-	font: 1.5em helvetica, sans-serif;
-	margin-right: 60px;
-}
-***/
-
 .another-one {
 	font: 1em helvetica, sans-serif;
 	color: black;
 	float: right;
-	margin-top: 100px;
+	display: block;
+	margin-top: 60px;
 	margin-right: 60px;
 	cursor: pointer;
 }
 
 .another-one:hover {
 	text-decoration: underline;
+}
+
+.play-button {
+	margin-top: 200px;
+	text-align: center;
+	display: block;
+	font: 2em helvetica, sans-serif;
+}
+
+.cardImage {
+	text-align: center;
+}
+
+.cardImage:hover {
+	-webkit-transform: scale(0.95); 
+    -moz-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.score {
+	margin-top: 60px;
+	font: 1.5em helvetica, sans-serif;
+	font-style: italic;
+}
+
+.message {
+	margin-top: 60px;
+	font: 1.5em helvetica, sans-serif;
+	font-style: italic;
+}
+
+.rank-image {
+	margin-top: 60px;
+}
+
+.cardimage, .message, .rank-image, .score {
+	display: none;
 }
 
 .footer {
