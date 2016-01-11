@@ -66,7 +66,7 @@ var SingleChoice = React.createClass({
 	render: function() {
 		//console.log("singlechoice");
 		var cardId = cardData[this.props.value].id
-		console.log(this.props.value);
+		//console.log(this.props.value);
 		return (
 			<img className="cardImage col-md-4" onClick={this.handleClick} src={imgPre + cardId + imgSuf} />
 		);
@@ -232,6 +232,10 @@ var View = React.createClass({
 		if (!firstLoad) fillArr();
 		this.newRound();
 		this.setState({
+			score: 0,
+			rounds: 0,
+			rank: 25,
+			curLeast: 0,
 			command: "Quit"
 		});
 		firstLoad = false;
