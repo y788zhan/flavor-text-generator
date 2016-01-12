@@ -1,29 +1,62 @@
 <html>
 	<head>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="style.css"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-		<script src="https://fb.me/react-0.13.3.js"></script>
-		<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+
+    	<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+
 		<script src="cardData.js"></script>
-		<script type="text/jsx" src="main.js"></script>
-		<script type="text/jsx">
-			var ft = React.createElement(flavorText);
-			React.render(ft, document.getElementById('stuff'));
-		</script>
+		<script type="text/babel" src="main.js"></script>
 
 		<link rel="icon" type="image/png" href="http://vignette2.wikia.nocookie.net/wowwiki/images/a/a0/Hearthstone-favicon-64x64.png/revision/latest?cb=20130325031813"/>
 		<title>Random Flavor Text Generator</title>
+
 	</head>
 	<body>
 		<div class="container">
-			<div id="stuff"></div>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10" id="stuff"></div>
+				<div class="col-md-1"></div>
+			</div>
 		</div>
 		<div class="footer">
-			<p>Card data obtained from https://hearthstonejson.com/</p>
-			<p>Not affiliated with Hearthstone JSON</p>
+			<p>Card data obtained from https://hearthstonejson.com/, images obtained from wow.zaming.com</p>
+			<p>Not affiliated with Hearthstone JSON or Blizzard</p>
 		</div>
+
+		<!- javascript ->
+
+		<script>
+			$(document).on('click', '.play-button', function(){
+    			if (!$(this).attr('data-toggled') || $(this).attr('data-toggled') == 'off') {
+    				// not playing
+           			$(this).attr('data-toggled','on');
+           			$('.another-one, .message, .rank-image').hide();
+           			$('.cardImage, .score').load().show('scale', 200);
+
+    			} else if ($(this).attr('data-toggled') == 'on') {
+    				// playing
+            		$(this).attr('data-toggled','off');
+            		$('.another-one').show();
+            		$('.cardImage, .score').hide();
+            		$('.message, .rank-image').show();
+    			}
+			});
+			
+			$(document).on('click', '.another-one', function() {
+				$('.message, .rank-image').hide();
+			});
+
+		</script>
+
+		<!- problem with image loading/displaying and eventListener/eventHandler for quit method ->
 	</body>
 </html>	
 	
