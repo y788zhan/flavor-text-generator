@@ -1,7 +1,8 @@
+//forgone loading gold cards on this branch due to performance issue
 var arr = [];
 var curIndex;
-var imgPre = "https://wow.zamimg.com/images/hearthstone/cards/enus/animated/";
-var imgSuf = "_premium.gif";
+var imgPre = "http://wow.zamimg.com/images/hearthstone/cards/enus/medium/";
+var imgSuf = ".png";
 var firstLoad = true;
 var firstImgLoad = true;
 
@@ -34,10 +35,13 @@ var ranks = [{rank: 0, title: "Legend"},
 
 function preloadImages(arr) {
 	var imgURL;
-	$(arr).each(function() {
-		imgURL = imgPre + cardData[this].id + imgSuf;
-		$('<img />')[0].src= imgURL;
-	});
+	var img;
+	var loadedImages = [];
+	for (var i = 0; i < arr.length; i++) {
+		img = new Image().src = imgPre + cardData[arr[i]].id + imgSuf;
+		loadedImages[i] = img;
+		//console.log('loaded' + cardData[arr[i]].id);
+	}
 }
 
 function fillArr() {
@@ -179,7 +183,7 @@ var FlavorText = React.createClass({
 var Achievement = React.createClass({
 	render: function() {
 		var title = ranks[this.props.value].title;
-		var imageURL = "/images/" + ranks[this.props.value].rank + ".png";
+		var imageURL = "./images/" + ranks[this.props.value].rank + ".PNG";
 		return (
 			<div>
 				<p className="message">You achieved the rank of <span>{title}</span>!</p>
