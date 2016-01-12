@@ -39,8 +39,8 @@ function preloadImages(arr) {
 	for (var i = 0; i < arr.length; i++) {
 		img = new Image().src = imgPre + cardData[arr[i]].id + imgSuf;
 		loadedImages[i] = img;
+		console.log('loaded' + cardData[arr[i]].id);
 	}
-	console.log('loaded');
 }
 
 function fillArr() {
@@ -182,7 +182,7 @@ var FlavorText = React.createClass({
 var Achievement = React.createClass({
 	render: function() {
 		var title = ranks[this.props.value].title;
-		var imageURL = "./images/" + ranks[this.props.value].rank + ".png";
+		var imageURL = "/../images/" + ranks[this.props.value].rank + ".png";
 		return (
 			<div>
 				<p className="message">You achieved the rank of <span>{title}</span>!</p>
