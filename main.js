@@ -1,7 +1,7 @@
 var arr = [];
 var curIndex;
-var imgPre = "https://wow.zamimg.com/images/hearthstone/cards/enus/animated/";
-var imgSuf = "_premium.gif";
+var imgPre = "http://wow.zamimg.com/images/hearthstone/cards/enus/medium/";
+var imgSuf = ".png";
 var firstLoad = true;
 var firstImgLoad = true;
 
@@ -182,7 +182,7 @@ var FlavorText = React.createClass({
 var Achievement = React.createClass({
 	render: function() {
 		var title = ranks[this.props.value].title;
-		var imageURL = "/../images/" + ranks[this.props.value].rank + ".png";
+		var imageURL = "./images/" + ranks[this.props.value].rank + ".PNG";
 		return (
 			<div>
 				<p className="message">You achieved the rank of <span>{title}</span>!</p>
