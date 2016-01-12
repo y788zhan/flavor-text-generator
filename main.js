@@ -1,3 +1,4 @@
+//forgone loading gold cards on this branch due to performance issue
 var arr = [];
 var curIndex;
 var imgPre = "http://wow.zamimg.com/images/hearthstone/cards/enus/medium/";
@@ -39,7 +40,7 @@ function preloadImages(arr) {
 	for (var i = 0; i < arr.length; i++) {
 		img = new Image().src = imgPre + cardData[arr[i]].id + imgSuf;
 		loadedImages[i] = img;
-		console.log('loaded' + cardData[arr[i]].id);
+		//console.log('loaded' + cardData[arr[i]].id);
 	}
 }
 
