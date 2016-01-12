@@ -34,10 +34,13 @@ var ranks = [{rank: 0, title: "Legend"},
 
 function preloadImages(arr) {
 	var imgURL;
-	$(arr).each(function() {
-		imgURL = imgPre + cardData[this].id + imgSuf;
-		$('<img />')[0].src= imgURL;
-	});
+	var img;
+	var loadedImages = [];
+	for (var i = 0; i < images.length; i++) {
+		img = new Image().src = imgPre + cardData[arr[i]].id + imgSuf;
+		loadedImages[i] = img;
+	}
+	console.log('loaded');
 }
 
 function fillArr() {
@@ -179,7 +182,7 @@ var FlavorText = React.createClass({
 var Achievement = React.createClass({
 	render: function() {
 		var title = ranks[this.props.value].title;
-		var imageURL = "/images/" + ranks[this.props.value].rank + ".png";
+		var imageURL = "./images/" + ranks[this.props.value].rank + ".png";
 		return (
 			<div>
 				<p className="message">You achieved the rank of <span>{title}</span>!</p>
