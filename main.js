@@ -36,7 +36,7 @@ function preloadImages(arr) {
 	var imgURL;
 	var img;
 	var loadedImages = [];
-	for (var i = 0; i < images.length; i++) {
+	for (var i = 0; i < arr.length; i++) {
 		img = new Image().src = imgPre + cardData[arr[i]].id + imgSuf;
 		loadedImages[i] = img;
 	}
